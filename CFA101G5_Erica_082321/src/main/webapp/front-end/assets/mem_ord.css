@@ -1,0 +1,148 @@
+body{
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", 
+  "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6C6C6C;
+  font-size: 14px;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+
+.hide{
+	display: none;
+}
+
+.navbar-nav{
+  background-color: #E1E7FB;
+  margin: 10px 0px;
+  display: inline-block;
+  width: 100%;
+  height: 60px;
+  padding-top: 10px;
+}
+
+.nav-item{
+  width: 16.66666%;
+  float: left;
+  text-align: center;
+  color: #6C6C6C; 
+}
+
+.nav-item a{
+  color: #6C6C6C;
+}
+
+.mem-ord a{
+  text-decoration: none;
+  font-size: 15px;
+  color: #000000;
+}
+
+.item div{
+	padding-top: 5px;
+}
+
+.storeId{
+  padding-bottom: 10px;
+}
+
+.storeId a{
+  font-size: 15px;
+  color: #000000;
+  text-decoration: none;
+}
+.div-r{
+	text-align:right;
+}
+
+.status{
+  color: #1B71C0;
+  font-weight: 500;
+}
+
+.item{
+  border-top: 0.5px solid #E9E9E9;
+}
+
+.ord-all-img{
+  width: 80px; 
+  height: 80px;
+  position: relative;
+}
+
+.ord-all-img img{
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.foot{
+	background-color: #FBFCFF;
+	padding: 5px;
+}
+
+.foot-l{
+  margin-left: 10px;
+  margin-right: -10px;
+  text-align: left;	
+  padding-top: 0px;
+  padding-bottom: 5px;
+
+/*   border: 1px solid green; */
+}
+.foot-l a{
+	color: #1B71C0;
+}
+
+
+.foot-r{
+
+  margin-left: -10px; 
+  margin-right: 10px;
+  text-align: right;
+  font-size: 16px;
+/*   border: 1px solid red; */
+	
+}
+.foot-r, foot-l{
+	padding: 0px 15px 5px 15px;
+}
+
+.amount{
+  color: #1B71C0;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.btn-blue{
+	
+	width: 150px;
+	height: 35px;
+	border: 0.5px solid #959595;
+	background-color: #1B71C0;
+	color: #fff;
+	border-radius: 0px;
+	font-size: 14px;
+	margin: 0;
+	margin-left: 5px;
+}
+
+.btn-gray{
+	
+	width: 150px;
+	height: 35px;
+	border: 0.5px solid #959595;
+	background-color: #fff;
+	color: #959595;
+	border-radius: 0px;
+	font-size: 14px;
+	margin-left: 5px;
+
+}

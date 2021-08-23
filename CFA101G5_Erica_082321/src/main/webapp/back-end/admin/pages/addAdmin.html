@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<meta charset="utf-8">
+<title>新增管理員</title>
+<!-- BootStrap 5.0.2 -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+<!-- jQuery 1.12.4 -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	crossorigin="anonymous"></script>
+<style>
+#addAdmin {
+	width: 30%;
+	margin: auto auto;
+}
+.title {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+	<div id="addAdmin">
+		<form class="addAdmin" name="addAdmin"
+			action="../../admin/AddAdminServlet" method="post">
+			<div class="col title">
+				<h4>新增管理員</h4>
+			</div>
+			<div class="mb-3 row">
+				<label for="adminid" class="col-sm-2 col-form-label">管理員編號：</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="adminid" id="adminid"
+						maxlength="4" size="4" pattern="^[1-9]{1}\d{1,}$"
+						placeholder="請輸入數字如：1001、2001" required />
+				</div>
+			</div>
+			<div class="mb-3 row">
+				<label for="adminacc" class="col-sm-2 col-form-label">管理員帳號：</label>
+				<div class="col-sm-10">
+					<input type="email" class="form-control" name="adminacc"
+						id="adminacc" maxlength="20" size="20" placeholder="請輸入電子郵件帳號" required />
+				</div>
+			</div>
+			<div class="mb-3 row">
+				<label for="adminpwd" class="col-sm-2 col-form-label">密碼：</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" name="adminpwd" id="adminpwd"
+						maxlength="20" size="20" pattern="^[1-9A-Za-z]{1}[1-9A-Za-z]{1,}$" required />
+				</div>
+			</div>
+			<div class="mb-3 row">
+				<label for="adminName" class="col-sm-2 col-form-label">管理員名稱：</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="adminName" id="adminName"
+						maxlength="20" size="20" placeholder="中、英文皆可" equired />
+				</div>
+			</div>
+			<input type="hidden" id="adminStatus" name="adminStatus" value="1">
+			<br>
+			<button class="btn btn-outline-success" type="submit" id="sendAddAdmin" name="sendAddAdmin"
+				value="insert">送出</button>
+		</form>
+	</div>
+
+	<script>
+		// 從資料庫抓出權限清單
+		/* 		$.ajax({
+		 url : "/CFA101G5/function/listAllFunction",
+		 type : "GET",
+		 success : function(funcNameList) {
+		 showFuncNames(funcNameList);
+		 }
+		 });
+
+		 function showFuncNames(funcNameList) {
+		 let nameOption = "";
+		 // let names = JSON.parse(funcNameList); 
+		 for (i in funcNameList) {
+		 let funcName = JSON.parse(funcNameList[i]);
+		 console.log(funcName.funcid);
+		 nameOption += "<option value='" + funcName.funcid + "'>"
+		 + funcName.funcName + "</option>";
+		 $("#funcid").html(nameOption);
+		 }
+
+		 } */
+		function getRootPath(){
+			let curPageUrl = window.document.location.href;
+			let rootPath = "/" + curPageUrl.split("//")[1].split("/")[1];
+			return rootPath;
+		};
+		 	 
+		// 將資料送至後端處理
+		$("#sendAddAdmin").click(function() {
+			$.post(getRootPath()+"/admin/AddAdminServlet", {
+				adminid : $("#adminid").val(),
+				adminacc : $("#adminacc").val(),
+				adminpwd : $("#adminpwd").val(),
+				adminStatus : $("#adminStatus").val(),
+				adminName : $("#adminName").val()
+			}, function(data, status) {
+				if (status == "success") {
+					console.log("連線成功");
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+* {
+	margin: auto;
+	padding: 0px;
+}
+
+html, body {
+	font: 15px verdana, Times New Roman, arial, helvetica, sans-serif, Microsoft JhengHei;
+	width: 70%;
+	height: 70%;
+	background: #eeeeda;
+	margin-top: 5px;
+}
+
+.title {
+	border: none;
+	padding: 15px 15px;
+	border-radius: 5px;
+	width: 100%;
+	background: #eeeeda;
+	box-shadow: inset 0 0 10px #000000;
+	font-weight: bold;
+}
+
+table.wwFormTable {
+font: 14px verdana, arial, helvetica, sans-serif;
+border-width: 1px;
+border-color: #030;
+border-style: solid;
+color: #242;
+background-color: #eeeeda;
+width: 100%;
+margin:0px auto;
+margin-top:0%;
+padding: 5px;
+float: none;
+text-align:left;
+box-shadow: inset 0 0 10px #000000;
+} 
+table.wwFormTable th {
+background-color: #D2D2D2;
+margin: 5px;
+padding: 5px;
+}
+table.wwFormTable tr{
+background-color: #eeeeda;
+margin: 5px;
+padding: 5px;
+}
+table.wwFormTable tr:hover{
+	background-color: #DFDDE8;
+}
+table.wwFormTable td {
+font-weight: bold;
+color:black;
+margin: 5px;
+padding: 5px;
+vertical-align:;
+}
+
+.button {
+	border: none;
+	padding: 5px 5px;
+	border-radius: 5px;
+	width: 100px;
+	background: orange;
+	box-shadow: inset 0 0 10px #000000;
+	font-weight: bold;
+}
+
+.button:hover {
+	background: yellow;
+}
+
+.error {
+	color: #ff0000;
+}
+
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 5px;
+	margin: 5px;
+}
